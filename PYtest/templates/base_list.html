@@ -1,0 +1,35 @@
+{% extends 'base_list_detail.html' %}
+
+{%  block head %}
+
+{% endblock head %}
+
+{% block body %}
+
+<div class="breadcrumb">
+		<a href="#">全部分类</a>
+		<span>></span>
+		<a href="#">新鲜水果</a>
+	</div>
+
+	<div class="main_wrap clearfix">
+		<div class="l_wrap fl clearfix">
+			<div class="new_goods">
+				<h3>新品推荐</h3>
+				<ul>
+					{% for item in news %}
+                        <li>
+                            <a href="/{{ item.id }}/"><img src="{{ item.gpic }}"></a>
+                            <h4><a href="/{{ item.id }}/">{{ item.gtitle }}</a></h4>
+                            <div class="prize">￥{{ item.gprice }}</div>
+					    </li>
+                    {% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+    {% block context %}
+    {% endblock context %}
+
+
+{% endblock body %}
